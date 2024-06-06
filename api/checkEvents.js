@@ -6,7 +6,7 @@ sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 module.exports = async (req, res) => {
   try {
     const response = await axios.get(
-      'https://comedy-mothership-api.vercel.app/2024-08-30/2024-09-07'
+      'https://comedy-mothership-api.vercel.app/2024-08-30/2024-09-02'
     );
 
     if (response.data.length > 0) {
@@ -22,7 +22,13 @@ module.exports = async (req, res) => {
         )}`,
       };
 
-      await sgMail.send(msg);
+      await sgMail.send(msg).then((response) => {
+          console.log(response[0].statusCode)
+          console.log(response[0].headers)
+        })
+        .catch((error) => {
+          console.error(error)
+        });
     }
 
     res.status(200).json({ success: true });

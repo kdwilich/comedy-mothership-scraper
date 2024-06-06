@@ -12,12 +12,12 @@
   ],
   "routes": [
     {
-      "src": "/(.*)",
-      "dest": "api/index.js"
-    },
-    {
       "src": "/api/check-event",
       "dest": "/api/checkEvents.js"
+    },
+    {
+      "src": "/",
+      "dest": "api/index.js"
     }
   ]
 }
