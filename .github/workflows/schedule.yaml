@@ -1,0 +1,16 @@
+name: Schedule Event Check
+
+on:
+  schedule:
+    - cron: '0 * * * *' # Runs every hour
+
+jobs:
+  check-scraper:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Check out repository
+      uses: actions/checkout@v2
+
+    - name: Call Event Check API
+      run: curl -X GET https://comedy-mothership-api.vercel.app/api/check-event
