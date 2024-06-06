@@ -16,7 +16,7 @@
       "dest": "/api/checkEvents.js"
     },
     {
-      "src": "/",
+      "src": "/(.*)",
       "dest": "api/index.js"
     }
   ]
