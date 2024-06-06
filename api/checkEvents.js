@@ -6,13 +6,13 @@ sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 module.exports = async (req, res) => {
   try {
     const response = await axios.get(
-      'https://your-vercel-deployment-url.vercel.app/scrape'
+      'https://comedy-mothership-api.vercel.app/2024-08-30/2024-09-07'
     );
 
     if (response.data.length > 0) {
       const msg = {
-        to: 'your-email@example.com',
-        from: 'your-email@example.com',
+        to: 'wilichowskikyle@gmail.com',
+        from: 'wilichowskikyle@gmail.com',
         subject: 'New Shows Found',
         text: `New shows found: ${JSON.stringify(response.data)}`,
         html: `<strong>New shows found:</strong><br>${JSON.stringify(

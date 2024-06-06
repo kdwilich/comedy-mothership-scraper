@@ -6,7 +6,7 @@
       "use": "@vercel/node"
     },
     {
-      "src": "api/checkScraper.js",
+      "src": "api/checkEvents.js",
       "use": "@vercel/node"
     }
   ],
@@ -16,8 +16,8 @@
       "dest": "api/index.js"
     },
     {
-      "src": "/api/check-scraper",
-      "dest": "/api/checkScraper.js"
+      "src": "/api/check-event",
+      "dest": "/api/checkEvents.js"
     }
   ]
 }
