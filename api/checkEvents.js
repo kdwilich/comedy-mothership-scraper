@@ -13,7 +13,7 @@ const transporter = nodemailer.createTransport({
 
 module.exports = async (req, res) => {
   try {
-    const dateRange = '2024-08-30/2024-09-02';
+    const dateRange = '2024-08-30/2024-09-07';
     const response = await axios.get('https://comedy-mothership-api.vercel.app/' + dateRange);
 
     if (response.data.length > 0) {
