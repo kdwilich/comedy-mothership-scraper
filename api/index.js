@@ -31,7 +31,8 @@ app.get('/:startDate/:endDate', async (req, res) => {
   const { startDate, endDate } = req.params;
   const from = new Date(startDate);
   const to = new Date(endDate);
-  const matches = events.filter(event => ((new Date(event.start)).getTime() >= from.getTime() && (new Date(event.start)).getTime() <= to.getTime()));
+  const eventStartTime = (e) => (new Date(e.start.split('T')[0])).getTime();
+  const matches = events.filter(event => (eventStartTime(event) >= from.getTime() && eventStartTime(event) <= to.getTime()));
   res.json(matches);
 });
 
